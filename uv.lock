@@ -23,7 +23,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "gitsource", specifier = ">=0.0.5" },
+    { name = "gitsource", specifier = "==0.0.5" },
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "markitdown", extras = ["pdf"], specifier = "==0.1.7" },
     { name = "minsearch", specifier = ">=0.2.0" },

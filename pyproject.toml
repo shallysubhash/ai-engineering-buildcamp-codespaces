@@ -8,7 +8,7 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
-    "gitsource>=0.0.5",
+    "gitsource==0.0.5",
     "jupyter>=1.1.1",
     "markitdown[pdf]==0.1.7",
     "minsearch>=0.2.0",
