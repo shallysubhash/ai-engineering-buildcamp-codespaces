@@ -22,3 +22,23 @@ def setup_database():
     count = con.execute("SELECT COUNT(*) FROM trips").fetchone()[0]
     print(f"Loaded {count} rows")
     return count
+
+class SQLTools:
+    def get_schema(self) -> str:
+        """Return the column names and types of the trips table."""
+        rows = con.execute("DESCRIBE trips").fetchall()
+        return "\n".join(f"{row[0]}: {row[1]}" for row in rows)
+
+    def run_sql(self, query: str) -> str:
+        """Execute SQL and return headers and at most 50 data rows."""
+        cursor = con.execute(query)
+        headers = [column[0] for column in cursor.description]
+        rows = cursor.fetchmany(50)
+
+        lines = ["\t".join(headers)]
+        lines.extend(
+            "\t".join(str(value) for value in row)
+            for row in rows
+        )
+        lines.append(f"Returned rows: {len(rows)}")
+        return "\n".join(lines)
