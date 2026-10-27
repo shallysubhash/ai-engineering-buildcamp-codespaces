@@ -11,7 +11,7 @@ dependencies = [
     "duckdb>=1.5.6",
     "gitsource==0.0.5",
     "jupyter>=1.1.1",
-    "logfire>=5.2.0",
+    "logfire[system-metrics]>=5.2.0",
     "markitdown[pdf]==0.1.7",
     "minsearch>=0.2.0",
     "openai>=3.22.1",
